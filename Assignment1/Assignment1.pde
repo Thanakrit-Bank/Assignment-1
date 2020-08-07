@@ -1,12 +1,16 @@
 //Thanakrit
-//06.08.2020
-//Craft balloon
+//07.08.2020
+//Craft balloon with function
 
 void setup() {
   size(640,640);
 }
 
 void draw() {
-  ellipse(320,320,100,100);
-  line(320,370,320,470);
+  balloon(320,320,100,100);
+}
+
+void balloon(float x,float y,float width,float height) {
+  ellipse(x,y,width,height);
+  line(x,y+(height/2),x,y+height+50);
 }
