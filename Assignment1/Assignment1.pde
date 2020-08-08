@@ -1,7 +1,8 @@
 //Thanakrit
 //08.08.2020
-//Add simple animation (float up)
+//Add simple animation (shake)
 
+float x;
 float y;
 
 void setup() {
@@ -10,8 +11,11 @@ void setup() {
 
 void draw() {
   background(255);
-  balloon(320,320-y,100,100);
-  y += 1;
+  if ( y < ((width/2)+height)) {
+    y -= 1;
+  }
+  x = random(-2,2);
+  balloon(320+x,height+y,100,100);
 }
 
 void balloon(float x,float y,float width,float height) {
