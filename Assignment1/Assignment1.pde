@@ -1,13 +1,17 @@
 //Thanakrit
-//07.08.2020
-//Craft balloon with function
+//08.08.2020
+//Add simple animation (float up)
+
+float y;
 
 void setup() {
   size(640,640);
 }
 
 void draw() {
-  balloon(320,320,100,100);
+  background(255);
+  balloon(320,320-y,100,100);
+  y += 1;
 }
 
 void balloon(float x,float y,float width,float height) {
