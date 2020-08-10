@@ -1,6 +1,6 @@
 //Thanakrit
 //10.08.2020
-//Add mousePressed stop in current position
+//Add random color to balloon
 
 //class name Balloon
 class Balloon {
@@ -8,6 +8,9 @@ class Balloon {
   float position_Y;
   float diameter;
   float wind;
+  int color_R;
+  int color_G;
+  int color_B;
   
   //Constructor
   Balloon(float x,float tempD) {
@@ -15,6 +18,9 @@ class Balloon {
     position_Y = height;
     diameter = random(tempD)+50;
     wind = int(random(-150,150));
+    color_R = int(random(0,255)); //random number of red color
+    color_G = int(random(0,255)); //random number of green color
+    color_B = int(random(0,255)); //random number of blue color
   }
   
   //function to make balloon float up
@@ -43,7 +49,7 @@ class Balloon {
   
   //function to create balloon
   void craft_balloon() {
-    fill(255,100,200); //fill color to balloon
+    fill(color_R,color_G,color_B); //fill color to balloon
     ellipse(position_X,position_Y,diameter,diameter);
     line(position_X,position_Y+(diameter/2),position_X,position_Y+(diameter+50));
   }
