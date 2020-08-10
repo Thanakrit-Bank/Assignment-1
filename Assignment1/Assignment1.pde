@@ -1,6 +1,6 @@
 //Thanakrit
 //10.08.2020
-//Using Array
+//Using loop with array
 
 //class name Balloon
 class Balloon {
@@ -55,26 +55,22 @@ class Balloon {
   }
 }
 
-Balloon[] balloon = new Balloon[3];
+Balloon[] balloon;
 
 void setup() {
   size(400,400); //set resolution
-  balloon[0] = new Balloon(100,80);  //create object
-  balloon[1] = new Balloon(200,80);  //create object
-  balloon[2] = new Balloon(300,80);  //create object
+  int amount = 5;
+  balloon = new Balloon[amount];
+  for (int i = 0; i < amount; i += 1) {
+    balloon[i] = new Balloon(int(random(width)),int(random(80)));
+  }
 }
 
 void draw() {
   background(255); //fill background
-  balloon[0].ascend();
-  balloon[0].wind();
-  balloon[0].craft_balloon();
-  
-  balloon[1].ascend();
-  balloon[1].wind();
-  balloon[1].craft_balloon();
-  
-  balloon[2].ascend();
-  balloon[2].wind();
-  balloon[2].craft_balloon();
+  for (Balloon amount_balloon : balloon) {
+    amount_balloon.ascend();
+    amount_balloon.wind();
+    amount_balloon.craft_balloon();
+  }
 }
