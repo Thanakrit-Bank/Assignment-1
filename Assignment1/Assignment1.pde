@@ -1,6 +1,6 @@
 //Thanakrit
 //10.08.2020
-//Add random color to balloon
+//Using Array
 
 //class name Balloon
 class Balloon {
@@ -55,16 +55,26 @@ class Balloon {
   }
 }
 
-Balloon balloon_1;
+Balloon[] balloon = new Balloon[3];
 
 void setup() {
   size(400,400); //set resolution
-  balloon_1 = new Balloon(200,80);  //create object
+  balloon[0] = new Balloon(100,80);  //create object
+  balloon[1] = new Balloon(200,80);  //create object
+  balloon[2] = new Balloon(300,80);  //create object
 }
 
 void draw() {
   background(255); //fill background
-  balloon_1.ascend();
-  balloon_1.wind();
-  balloon_1.craft_balloon();
+  balloon[0].ascend();
+  balloon[0].wind();
+  balloon[0].craft_balloon();
+  
+  balloon[1].ascend();
+  balloon[1].wind();
+  balloon[1].craft_balloon();
+  
+  balloon[2].ascend();
+  balloon[2].wind();
+  balloon[2].craft_balloon();
 }
