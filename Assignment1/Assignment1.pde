@@ -1,6 +1,6 @@
 //Thanakrit
 //10.08.2020
-//Add wind function
+//Add mousePressed stop in current position
 
 //class name Balloon
 class Balloon {
@@ -19,14 +19,18 @@ class Balloon {
   
   //function to make balloon float up
   void ascend() {
-    if ( position_Y < ((width/2)+height)) {
+    if (mousePressed) {
+      position_Y = position_Y; //stop at current y position
+    } else if ( position_Y < ((width/2)+height)) {
         position_Y -= 1;
     }
   }    
   
   //function to make balloon move left and right
   void wind() {
-    if (wind == 0) {
+    if (mousePressed) {
+      position_X = position_X; //stop at current x position
+    } else if (wind == 0) {
       wind = int(random(-150,150));
     } else if (wind > 0) {
         position_X += 1;
